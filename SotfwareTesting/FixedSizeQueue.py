@@ -25,7 +25,7 @@ class Queue:
         self.tail += 1
         if self.tail == self.max:
             self.head = 0
-        return x
+        return True
 
     def dequeue(self):
         if self.size == 0:
@@ -36,3 +36,14 @@ class Queue:
         if self.head == self.max:
             self.head = 0
         return x
+
+#"This would create first object of Queue class"
+
+queu = Queue(2)
+print "Quiz"
+print queu.enqueue(6)
+print queu.enqueue(7)
+print queu.enqueue(8)
+print queu.dequeue()
+print queu.dequeue()
+print queu.dequeue()
