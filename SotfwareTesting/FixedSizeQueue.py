@@ -36,6 +36,18 @@ class Queue:
         if self.head == self.max:
             self.head = 0
         return x
+
+    def checkRep(self):
+        assert self.size >= 0 and self.size <= self.max
+        ###Your code here.
+        if self.tail > self.head:
+            assert (self.tail - self.head) == self.size
+        if self.tail < self.head:
+            assert (self.head - self.tail) == (self.max - self.size)
+        if self.tail == self.head:
+            assert self.size == 0 or self.size == self.max
+        return
+
 def test1():
     q = Queue(3)
     res = q.empty()
@@ -103,6 +115,7 @@ def test3():
         print "test3 not ok"
         return
     print "test3 OK"
+
 
 
 test1()
